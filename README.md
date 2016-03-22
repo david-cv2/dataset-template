@@ -13,7 +13,7 @@ Note that unix time 1458616813 represents the date 2016-03-22T03:20:13Z (22 Marc
 
 Representing the values in either a hex or binary string would make it easy for microprocessor code to parse the data (fixed length string), as well as help make datasets that contain timeseries for up to 32 GPIOs. We can drop down to 16-bit or 8-bit for value or time if no such granularity is needed.
 
-An example of a simple time series using 8 bits to simulate moving bar of GPIO pairs.
+An example of a simple time series using 8 bits to simulate moving bar of GPIO pairs. Able to display up to 256 settings (<5min with 1 setting / s) of 8 high/low GPIO pins.
 
  time (8-bit, hex) | value (8-bit, binary)
  --- | ---
@@ -30,7 +30,7 @@ Now, in pseudo arduino code, you can parse this using something like
 ```cpp
 // connect to local/remote data table using "client"
 loop() {
-  // for each line, ignoring time for now
+  // for each line, ignoring time for now, one char has 8 bits
   char time = client.read();
   char value = client.read();
   digitalWrite(1, value & 1 == 0 ? LOW : HIGH);
@@ -42,4 +42,4 @@ loop() {
 }
 ```
 
-
+Questions: how much can we constrain ourselves in our data tables? how much data do we need to drive the GPIO pins in time?
