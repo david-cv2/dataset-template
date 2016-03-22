@@ -36,11 +36,11 @@ An example of a simple time series using 8 bits to simulate moving bar of GPIO p
 Now, in pseudo arduino code, you can parse this using something like
 
 ```cpp
-// connect to local/remote data table using "client"
+// connect to local/remote data table 
 loop() {
   // for each line, ignoring time for now, one char has 8 bits
-  char time = client.read();
-  char value = client.read();
+  char time = read(..);
+  char value = read(...);
   digitalWrite(1, value & 1 == 0 ? LOW : HIGH);
   digitalWrite(2, value & 2 == 0 ? LOW : HIGH);
   digitalWrite(3, value & 4 == 0 ? LOW : HIGH);
