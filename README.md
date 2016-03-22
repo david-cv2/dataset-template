@@ -27,4 +27,19 @@ An example of a simple time series using 8 bits, progressively setting three GPI
  0x08 | 00000111
 ... | ...
 
+Now, in pseudo arduino code, you can parse this using something like
+
+```cpp
+loop() {
+  char timeValue[2]; 
+  char time = client.read();
+  char value = client.read();
+  // ignore time for now
+  digitalWrite(1, value & 1 == 0 ? LOW : HIGH);
+  digitalWrite(2, value & 3 == 0 ? LOW : HIGH);
+  digitalWrite(3, value & 7 == 0 ? LOW : HIGH)
+  
+}
+```
+
 
