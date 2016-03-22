@@ -1,7 +1,15 @@
 # dataset-template
 a testing ground for data formats suitable to drive microprocessor GPIOs
 
-## time series
+## examples
+
+ dataset name | edit access | raw access (for arduino)
+  --- | --- | ---
+  moving light | [moving_light.tsv](../master/moving_light.tsv) | [moving_lights.tsv](https://raw.githubusercontent.com/opendataopenminds/dataset-template/master/moving_light.tsv)
+
+
+
+## time series 
 
 Note that unix time 1458616813 represents the date 2016-03-22T03:20:13Z (22 March 2016 03:20:13 UTC/GMT).
 
