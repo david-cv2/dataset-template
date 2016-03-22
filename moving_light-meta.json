@@ -1,1 +1,5 @@
-{ "_comment": "some json file with information about the dataset in moving_light.tsv" }
+{ "_comment": "some json file with information about the dataset in moving_light.tsv",
+  "title": "a moving light",
+  "createdBy": "donald duck",
+  "description": "making lights move around in an endless loop"
+}
